@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Misbah 💗</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Georgia, serif;
+  background: linear-gradient(135deg,#ffe1ed,#e9ddff,#fff0f5);
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+.card {
+  background: rgba(255,255,255,.85);
+  padding: 45px 25px;
+  border-radius: 30px;
+  text-align: center;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 0 15px 45px #c78cae55;
+}
+
+.small {
+  color: #c04e85;
+  letter-spacing: 4px;
+  font-size: 12px;
+}
+
+.cake {
+  font-size: 65px;
+  margin: 25px;
+}
+
+h1 {
+  color: #c04e85;
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+p {
+  color: #79566d;
+  line-height: 1.8;
+  margin: 20px 0;
+}
+
+button {
+  border: none;
+  padding: 15px 25px;
+  border-radius: 30px;
+  background: linear-gradient(45deg,#e879a8,#b77bd5);
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.message {
+  display: none;
+  background: #fff0f7;
+  padding: 22px;
+  margin-top: 25px;
+  border-radius: 20px;
+  line-height: 1.8;
+  color: #86516e;
+}
+
+.message.show {
+  display: block;
+  animation: appear 1s;
+}
+
+@keyframes appear {
+  from {opacity: 0; transform: translateY(15px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+.heart {
+  position: fixed;
+  top: -30px;
+  animation: fall 5s linear forwards;
+  pointer-events: none;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <div class="small">A SPECIAL DAY FOR YOU</div>
+
+  <div class="cake">🎂</div>
+
+  <h1>Happy Birthday<br>Misbah! 💗</h1>
+
+  <p>
+    A beautiful day for a beautiful soul.
+    May your life always be filled with happiness,
+    endless blessings and countless reasons to smile.
+  </p>
+
+  <button onclick="surprise()">
+    Open Your Surprise 💌
+  </button>
+
+  <div class="message" id="message">
+    Dear Misbah! ❤️
+
+    <br><br>
+
+    May Allah bless you with happiness,
+    good health, success and peace.
+
+    May all your beautiful dreams come true.
+    May this new chapter bring you endless
+    opportunities and unforgettable memories.
+
+    <br><br>
+
+    Keep shining and stay blessed!
+
+    <br><br>
+
+    Lots of duas and love! 🥹💗
+  </div>
+
+  <p>♡ by Alisha| 02 December ♡</p>
+
+</div>
+
+<script>
+function surprise() {
+
+  document.getElementById("message")
+    .classList.add("show");
+
+  for(let i=0; i<40; i++) {
+
+    let heart = document.createElement("div");
+
+    heart.className = "heart";
+    heart.innerHTML = ["💗","💕","✨","♡","🌸"]
+      [Math.floor(Math.random()*5)];
+
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.animationDuration =
+      (2+Math.random()*4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>heart.remove(),6000);
+  }
+}
+</script>
+
+</body>
+</html>
